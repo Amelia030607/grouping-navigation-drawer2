@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 
+// Kelas MyHomePage adalah sebuah widget stateless yang merepresentasikan halaman utama aplikasi.
 class MyHomePage extends StatelessWidget {
+  // Constructor menerima parameter 'title' untuk judul halaman.
   const MyHomePage({super.key, required this.title});
 
-  final String title;
+  // Variabel 'title' digunakan untuk menyimpan judul halaman.
+  final String title; 
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return Scaffold( // Scaffold digunakan sebagai kerangka utama halaman.
+      appBar: AppBar( // AppBar digunakan untuk menampilkan bilah aplikasi di bagian atas halaman.
         title: Text(
           title,
           style: const TextStyle(
             color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.blue[900],
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.blue[900], // Warna latar belakang
+        foregroundColor: Colors.white, // Warna ikon pada AppBar
       ),
-      drawer: buildGroupDrawer(context),
+      drawer: buildGroupDrawer(context), // Drawer digunakan untuk menampilkan menu navigasi tambahan.
       body: Center(
-        child: Text("pemrograman mobile $title"),
+        child: Text("pemrograman mobile $title"), // Teks utama yang ditampilkan pada body.
       ),
     );
     //body: GridView.count(
@@ -52,27 +55,28 @@ class MyHomePage extends StatelessWidget {
     // );
   }
 
+  // Fungsi buildGroupDrawer digunakan untuk membangun menu navigasi (Drawer).
   Widget buildGroupDrawer(context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.zero, // Menghilangkan padding default pada ListView.
         children: [
-          DrawerHeader(
+          DrawerHeader( // DrawerHeader digunakan untuk membuat header pada Drawer.
             decoration: BoxDecoration(color: Colors.blue[900]),
             child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue[900]),
-              accountName: Text("Riski Amelia Wiji Astuti",
+              decoration: BoxDecoration(color: Colors.blue[900]), // Latar belakang header Drawer.
+              accountName: Text("Riski Amelia Wiji Astuti", // Nama pengguna yang ditampilkan pada DrawerHeader.
               style : TextStyle(
                 fontSize : 18.0,
               ),
               ),
-              accountEmail: Text("riskiamelia.xpplg2@gmail.com",),
-              currentAccountPictureSize: Size.square(40.0),
+              accountEmail: Text("riskiamelia.xpplg2@gmail.com",), // Email pengguna yang ditampilkan.
+              currentAccountPictureSize: Size.square(40.0), // Ukuran avatar berbentuk lingkaran.
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Text("2",
-                style: TextStyle(fontSize: 25.0,
-                color: Colors.blue,
+                backgroundColor: Colors.white, // Warna latar belakang avatar.
+                child: Text("2", // Inisial pengguna atau teks dalam avatar.
+                style: TextStyle(fontSize: 25.0, // Ukuran font teks dalam avatar.
+                color: Colors.blue, // Warna teks avatar.
                 ),
                 ),
                 ),
@@ -155,11 +159,11 @@ class MyHomePage extends StatelessWidget {
           //     ),
            // ],
           ),
-          ListTile(
-            leading: Icon (Icons.person),
-            title: Text("Amel"),
-            subtitle: Text("XII RPL 2"),
-            trailing: Icon (Icons.chevron_right),
+          ListTile( // ListTile digunakan untuk menampilkan item menu dalam Drawer.
+            leading: Icon (Icons.person), // Ikon di depan teks menu.
+            title: Text("Amel"), // Nama pengguna atau menu utama.
+            subtitle: Text("XII RPL 2"), // Untuk menambah informasi tambahan, seperti kelas pengguna.
+            trailing: Icon (Icons.chevron_right), // Ikon panah di bagian kanan menu.
           ),
         ],
       ),
