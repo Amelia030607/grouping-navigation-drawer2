@@ -6,15 +6,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // Konstanta yang digunakan untuk judul atau header aplikasi
   static const header = "XII RPL 2" ;
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of your application
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: header,
-      theme: ThemeData(
+      theme: ThemeData( // Properti 'theme' mengatur tema visual aplikasi
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), // Skema warna untuk tema aplikasi
         useMaterial3: true,
       ),
       home: const MyHomePage(title: "Flutter Demo Home Page"),
